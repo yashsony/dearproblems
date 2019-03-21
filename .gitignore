@@ -108,4 +108,4 @@ venv.bak/
 
 # Database
 *.sqlite3
-#djangoherokuapp/settings/development.py
+mysite/settings/development.py
