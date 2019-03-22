@@ -52,7 +52,7 @@ def user_new(request):
             user.last_name =  form1.cleaned_data['last_name']
             user.save()
             form2 = AuthenticationForm()
-            return redirect('http://127.0.0.1:8000/login/' , {'form2':form2})
+            return redirect('http://dearproblems.herokuapp.com/login/' , {'form2':form2})
         else:
             return render(request, 'registration/post_edit.html', {'form1': form1, 'form': form})
     else:
@@ -72,7 +72,7 @@ def validate_username(request):
 
 def logout_view(request):
     logout(request)
-    return redirect("http://127.0.0.1:8000/")
+    return redirect("http://dearproblems.herokuapp.com/")
 
 
 def profile(request):
@@ -98,7 +98,7 @@ def profile(request):
         return render(request, 'registration/new.html', context)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/', {'form2': form2})
+        return redirect('http://dearproblems.herokuapp.com/login/', {'form2': form2})
 
 def profile1(request):
     if request.user.is_authenticated:
@@ -123,7 +123,7 @@ def profile1(request):
         return render(request, 'registration/new.html', context)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2})
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2})
 
 def profile2(request):
     if request.user.is_authenticated:
@@ -148,7 +148,7 @@ def profile2(request):
         return render(request, 'registration/new.html', context)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2})
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2})
 
 
 
@@ -167,14 +167,14 @@ def formpost(request):
                 p.save()
                 global alert
                 alert = True
-                return redirect('http://127.0.0.1:8000/list/')
+                return redirect('http://dearproblems.herokuapp.com/list/')
         else :
             form = sea()
             form1 = qwe()
             return render(request,'registration/post_form.html',{'form':form ,'form1': form1 })
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2})
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2})
 
 def postlist(request):
     if request.user.is_authenticated:
@@ -205,7 +205,7 @@ def postlist(request):
         return render(request, 'registration/my_book_list.html', context)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2})
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2})
 
 
 
@@ -245,7 +245,7 @@ def post_detail_view(request,id):
         return render(request,'registration/add_comment.html',context)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2 })
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2 })
 
 def add_like(request):
     if request.user.is_authenticated:
@@ -263,7 +263,7 @@ def add_like(request):
         return JsonResponse(data)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2 })
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2 })
 
 def add_comment(request, id):
     if request.user.is_authenticated:
@@ -276,12 +276,12 @@ def add_comment(request, id):
                 p.comment = form.cleaned_data['comment']
                 p.post = post.objects.get(id=id)
                 p.save()
-                return redirect('http://127.0.0.1:8000/'+ str(id) +"/")
+                return redirect('http://dearproblems.herokuapp.com/'+ str(id) +"/")
         else :
-            return redirect('http://127.0.0.1:8000/addcomment/' + str(id) +"/")
+            return redirect('http://dearproblems.herokuapp.com/addcomment/' + str(id) +"/")
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2 })
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2 })
 
 def profile_others(request,id):
     if request.user.is_authenticated:
@@ -309,7 +309,7 @@ def profile_others(request,id):
         return render(request, 'registration/new1.html', context)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2 })
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2 })
 
 def profile_others1(request,id):
     if request.user.is_authenticated:
@@ -338,7 +338,7 @@ def profile_others1(request,id):
         return render(request, 'registration/new1.html', context)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2 })
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2 })
 
 def profile_others2(request,id):
     if request.user.is_authenticated:
@@ -367,7 +367,7 @@ def profile_others2(request,id):
         return render(request, 'registration/new1.html', context)
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2 })
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2 })
 
 
 
@@ -403,10 +403,10 @@ def searchlist(request ):
             context = {"z": I,"icon": True }
             return render(request, 'registration/my_book_list.html', context)
         else:
-            return redirect("http://127.0.0.1:8000/list/")
+            return redirect("http://dearproblems.herokuapp.com/list/")
     else:
         form2 = AuthenticationForm()
-        return redirect('http://127.0.0.1:8000/login/',{'form2': form2 })
+        return redirect('http://dearproblems.herokuapp.com/login/',{'form2': form2 })
 
 
 

@@ -157,13 +157,13 @@ margin-right:4px;
     <div class="p"> <strong class="mb"  > Dear problems</strong>
 
 {% if icon %}
-                <a href="http://127.0.0.1:8000/list/"><span  style="float:right;padding-right:10px;" class="s glyphicon glyphicon-arrow-left"></span></a>
+                <a href="http://dearproblems.herokuapp.com/list/"><span  style="float:right;padding-right:10px;" class="s glyphicon glyphicon-arrow-left"></span></a>
 
         {% else %}
 
 
           <span id="searchbar" class="pz" style="float:right;font-size:11px;margin-right:11px;border:none;">
-        <form   action="http://127.0.0.1:8000/search/" method="GET">
+        <form   action="http://dearproblems.herokuapp.com/search/" method="GET">
             {{ form.q }}
             <button type="submit" style="border:2px solid black;outline:none;background-color: rgb(178,260,0);color:black;" id="zxc"><big>SUBMIT</big></button>
     </form>
@@ -180,7 +180,7 @@ margin-right:4px;
 <br><br>
 <div class="fuid-container alert_bar">
     <div class="alert alert-success alert-dismissible fade in">
-        <a href="http://127.0.0.1:8000/list/" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <a href="http://dearproblems.herokuapp.com/list/" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Success!</strong> {{ data_for_alert }}
     </div>
 </div>
@@ -190,10 +190,10 @@ margin-right:4px;
 
 
 <div class="row iconbar " style="z-index:9000;">
-    <a href="http://127.0.0.1:8000/list/"  ><span class="glyphicon glyphicon-list-alt col-xs-3 i"></span></a>
-    <a href="http://127.0.0.1:8000/post/"  ><span class="glyphicon glyphicon-edit col-xs-3 i"></span></a>
-  <a href="http://127.0.0.1:8000/myacc/"> <span class=" glyphicon glyphicon-user col-xs-3 i"></span></a>
-    <a href="http://127.0.0.1:8000/setting/" ><span class="glyphicon glyphicon-tasks col-xs-3 i"></span></a>
+    <a href="http://dearproblems.herokuapp.com/list/"  ><span class="glyphicon glyphicon-list-alt col-xs-3 i"></span></a>
+    <a href="http://dearproblems.herokuapp.com/post/"  ><span class="glyphicon glyphicon-edit col-xs-3 i"></span></a>
+  <a href="http://dearproblems.herokuapp.com/myacc/"> <span class=" glyphicon glyphicon-user col-xs-3 i"></span></a>
+    <a href="http://dearproblems.herokuapp.com/setting/" ><span class="glyphicon glyphicon-tasks col-xs-3 i"></span></a>
 </div>
 
 

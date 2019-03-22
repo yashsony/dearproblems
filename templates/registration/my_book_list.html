@@ -16,7 +16,7 @@ search
 
 <div class="aw">
     <img src="{% static "/my_app/my_avtar.png" %}" alt="avtar" width="50" height="50" style="margin-left:15px;margin-top:5px; box-shadow:0 3px 4px 0 rgba(0,0,0,0.2),0 6px 8px 0 rgba(0,0,0,0.19);">
-    <span class="user"><strong><a href="http://127.0.0.1:8000/profile/{{ d.id }}/" style="text-decoration:none;">{{ b.user }}</a></strong></span>
+    <span class="user"><strong><a href="http://dearproblems.herokuapp.com/profile/{{ d.id }}/" style="text-decoration:none;">{{ b.user }}</a></strong></span>
 </div>
 
     <div class="aq" style="background-color:white; border: 1px solid #E0E0E0;">
@@ -24,7 +24,7 @@ search
 {{ b.description }}
     </div>
 <button type="button" class="ae ooq" value="{{ b.id }}" style="outline:none;"> Like</button>
-<button type="button" class="ar"><a href="http://127.0.0.1:8000/{{ b.id }}/" style="text-decoration:none; outline:none;">Comment</a></button>
+<button type="button" class="ar"><a href="http://dearproblems.herokuapp.com/{{ b.id }}/" style="text-decoration:none; outline:none;">Comment</a></button>
 
 <div class="o"><strong>Liked by </strong><span class="{{ b.id }}">{{ c }}</span>  </div>
 <div class="o1" style="margin-top:5px"><strong>Commented by </strong> {{ a }} </div>
