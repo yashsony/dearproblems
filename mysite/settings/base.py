@@ -111,4 +111,4 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/list/'
+LOGIN_REDIRECT_URL = 'http://dearproblems.herokuapp.com/list/'
