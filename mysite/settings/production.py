@@ -5,7 +5,7 @@ import os
 #SECRET_KEY = S3Connection(os.environ['SECRET_KEY'])
 SECRET_KEY = os.environ['SECRET_KEY']
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['dearproblems.herokuapp.com']
 
