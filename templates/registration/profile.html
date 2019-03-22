@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+
+    span{ height:500px;
+    }
+
+
+body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left:0px;
+padding-right:0px;
+
+}
+#change_class2{
+display:inline-block;}
+#change_class1{
+padding-left:0px;
+padding-right:0px;
+}
+
+</style>
+<script>
+
+
+
+
+
+
+
+$(window).on('resize', function() {
+
+
+   var isMobile = window.matchMedia("only screen and (max-width: 1200px)").matches;
+      if (isMobile)
+      {
+
+        $("#change_class2").removeClass("col-lg-8");
+        $("#change_class2").css("display","none");
+
+      }
+      else{
+
+        $("#change_class2").addClass("col-lg-8");
+        $("#change_class2").css("display","inline-block");
+
+
+
+
+      }
+});
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</head>
+<body>
+
+    <span class="container" style="border:1px solid yellow;">
+        <span class="col-lg-4" id="change_class1" style="height:auto; width:100%; border:1px solid black;">
+{% load static %}
+
+        <img src="{% static "/my_app/tab.png" %}" alt="tab" width="100%"  class="img-responsive">
+        </span>
+
+
+        <span class="col-lg-8" id="change_class2" style="height:450px;">
+
+
+
+
+
+
+
+<div class="row" >
+      <div class ="col-xs-1" style="1px solid black"></div>
+      <div class ="col-xs-10" style="font-family:cursive; border:1px solid black;"><i>
+
+          DearProblems.com is a platform<br>
+           HERE YOU CAN SHARE YOUR PROBLEMS RELATED TO :-
+          <ul>
+              <li>ENVIRONMENT</li>
+              <li>SOCIETY</li>
+              <li>ADMINISTRATION</li>
+              <li>PERSONAL</li>
+              <li> OR it can be related to any thing</li>
+          </ul>
+
+
+
+
+          <hr>
+           <h3>Outcomes you will get:-</h3>
+          <ol><li>What worlds thinks about your problem</li>
+          <li>Get solution of your problem by our community</li>
+          <li>Experience  of same problem by other peoples</li>
+          <li>Aware other peoples by your problem</li>
+           <li> Find other peoples problems in our Society</li>
+          </ol>
+
+
+      </i></div>
+
+      <div class ="col-xs-1" style="1px solid black"></div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </span>
+    </span>
+
+
+</body>
+
+</html>

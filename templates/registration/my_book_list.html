@@ -1,0 +1,61 @@
+
+
+
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block title %}
+{% if icon %}
+All Post
+{% else %}
+search
+{% endif %}
+{% endblock %}
+
+{% block content %}
+ {% for b,c,a,d in z %}
+
+<div class="aw">
+    <img src="{% static "/my_app/my_avtar.png" %}" alt="avtar" width="50" height="50" style="margin-left:15px;margin-top:5px; box-shadow:0 3px 4px 0 rgba(0,0,0,0.2),0 6px 8px 0 rgba(0,0,0,0.19);">
+    <span class="user"><strong><a href="http://127.0.0.1:8000/profile/{{ d.id }}/" style="text-decoration:none;">{{ b.user }}</a></strong></span>
+</div>
+
+    <div class="aq" style="background-color:white; border: 1px solid #E0E0E0;">
+        <h4>{{ b.title }}</h4>
+{{ b.description }}
+    </div>
+<button type="button" class="ae ooq" value="{{ b.id }}" style="outline:none;"> Like</button>
+<button type="button" class="ar"><a href="http://127.0.0.1:8000/{{ b.id }}/" style="text-decoration:none; outline:none;">Comment</a></button>
+
+<div class="o"><strong>Liked by </strong><span class="{{ b.id }}">{{ c }}</span>  </div>
+<div class="o1" style="margin-top:5px"><strong>Commented by </strong> {{ a }} </div>
+<hr>
+ {% endfor %}
+<br>
+
+<br>
+{% endblock %}
+{% block javascript %}
+
+
+$(".ooq").click(function () {
+      var id = $(this).val();
+
+      $.ajax({
+        url: '/ajax/add_like/',
+        data: {
+          'id': id
+        },
+        dataType: 'json',
+
+        success: function (data) {
+            if(data.w=="already liked")
+                {$("."+id).text(" "+data.w+" by you");}
+            else
+                {$("."+id).text(" "+data.w+" liked by you");}
+
+
+        }
+      });
+
+    });
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends 'registration/base.html' %}
+{% block css %}
+
+@media only screen and (max-width: 890px) {
+
+  .searchdiv {
+    height:auto;
+    width: 100%;
+    margin-top: 0;
+  }
+
+.titlepost {
+margin-left:-120px;
+
+}
+
+.titlepost1 {
+margin-left:-90px;
+}
+
+
+
+
+}
+#id_title{
+ border-radius:3px 17px 2px;
+ box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#id_description{
+ border-radius:3px 17px 2px;
+ box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+   outline: none;
+    padding: 12px 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+border: 1px solid #555;
+font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:12px;
+
+}
+
+.newpost{
+font-size:12px;
+}
+
+
+.searchdiv{
+height:750px;
+}
+#submit{
+  background-color: rgb(148,210,0,0.5);
+ border-radius:3px 17px 2px;
+font-size:15px;
+}
+
+#id_title[type=text] {
+    width:340px;
+  padding: 6px 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+
+
+{% endblock %}
+
+{% block content %}
+<div class ="searchdiv">
+<br><br><br>
+
+
+    <div class="row">
+      <div class ="col-xs-4"></div>
+        <div class ="newpost col-xs-4"><b>   Create New Post</b></div>
+      <div class ="col-xs-4"></div>
+
+        </div>
+
+
+
+
+
+
+    <hr>
+    <form method="POST" >{% csrf_token %}
+
+
+
+        <div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-lg-4">
+        <label for="Title" class="titlepost" style="padding-left:120px;padding-top:1px;">Title</label>
+      </div>
+      <div class="col-lg-4" >
+        {{ form1.title }}
+      </div>
+    </div>
+
+            <br>
+            <br>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="description" class="titlepost1" style="padding-left:90px;padding-top:1px;" >Description</label>
+      </div>
+        <div class="col-sm-8">
+       {{ form1.description }}
+      </div>
+    </div>
+            <br>
+
+
+
+
+    <div class="row">
+      <div class ="col-xs-4"></div>
+      <div class ="col-xs-4"><input type="submit" value="SUBMIT" style="outline:none;" id="submit"></div>
+        <div class ="col-xs-4"></div>
+    </div>
+
+
+
+
+
+
+
+        </div>
+  </form>
+    <hr>
+</div>
+{% endblock %}

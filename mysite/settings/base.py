@@ -47,11 +47,12 @@ INSTALLED_APPS = [
 ##]
 
 ROOT_URLCONF = 'mysite.urls'
+MY1 = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [MY1 +'/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,3 +110,5 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/list/'

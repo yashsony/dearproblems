@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+
+
+@media (max-width: 768px) {
+
+
+.hedline{
+font-size:25px!important;
+padding-top:20px!important;}
+
+}
+.i{
+    font-size:30px;
+    border:0px solid black;
+    padding-top:25px;
+    padding-bottom:10px;
+    margin-left:20%;
+    margin-right:0px;
+    background-color:white;
+    outline:none;
+
+
+    }
+.i1{
+font-size:30px;
+    border:0px solid black;
+    padding-top:25px;
+    padding-bottom:10px;
+    margin-left:5%;
+    margin-right:-70%;
+
+
+}
+
+
+.hedline{
+font-size:35px;
+}
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 20px;
+  }
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
+label{
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+
+
+
+#id_first_name[type=text] {
+    width:90%;
+margin-left:5%;
+  padding: 6px 20px;
+border:none;
+outline:none;
+border-bottom: 2px solid grey;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+#id_first_name[type=text]:hover {
+border-bottom: 2px solid green;
+    width:100%;
+margin-left:0px;
+
+
+}
+#id_last_name[type=text] {
+    width:90%;
+margin-left:5%;
+  padding: 6px 20px;
+border:none;
+outline:none;
+border-bottom: 2px solid grey;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+#id_last_name[type=text]:hover {
+border-bottom: 2px solid green;
+    width:100%;
+margin-left:0px;
+
+
+}
+#id_password {
+    width:90%;
+margin-left:5%;
+  padding: 6px 20px;
+border:none;
+outline:none;
+border-bottom: 2px solid grey;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+#id_password:hover {
+border-bottom: 2px solid green;
+    width:100%;
+margin-left:0px;
+
+
+}
+#id_username {
+    width:90%;
+margin-left:5%;
+  padding: 6px 20px;
+border:none;
+outline:none;
+border-bottom: 2px solid grey;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+#id_username:hover {
+border-bottom: 2px solid green;
+    width:100%;
+margin-left:0px;
+
+
+}
+#id_email[type=email] {
+    width:90%;
+margin-left:5%;
+  padding: 6px 20px;
+border:none;
+outline:none;
+border-bottom: 2px solid grey;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+#id_email[type=email]:hover {
+border-bottom: 2px solid green;
+    width:100%;
+margin-left:0px;
+
+}
+#id_password{
+type="password"
+}
+#id_confirm_password[type=password] {
+    width:90%;
+margin-left:5%;
+  padding: 6px 20px;
+border:none;
+outline:none;
+border-bottom: 2px solid grey;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+#id_confirm_password[type=password]:hover {
+border-bottom: 2px solid green;
+    width:100%;
+margin-left:0px;
+
+}
+
+#submit{
+width:90%;
+margin-left:5%;
+margin-top:30px;
+}
+#submit:hover{
+margin-left:0px;
+width:100%;
+}
+
+
+#pswd_info {
+    position:absolute;
+    bottom:20px;
+    bottom: -115px\9; /* IE Specific */
+    right:2%;
+    width:250px;
+    padding:15px;
+    background:#fefefe;
+    font-size:.875em;
+    border-radius:5px;
+    box-shadow:0 1px 3px #ccc;
+    border:1px solid #ddd;
+}
+
+
+#pswd_info h3 {
+    margin:0 0 10px 0;
+    padding:0;
+    font-weight:normal;
+}
+
+
+#pswd_info::before {
+     content: "\25C0";
+    position:absolute;
+    top:50px;
+    left:-4%;// for that small arrow
+    font-size:14px;
+    line-height:14px;
+    color:#ddd;
+    text-shadow:none;
+    display:block;
+}
+
+.invalid {
+    padding-left:22px;
+    line-height:24px;
+    color:#ec3f41;
+}
+.valid {
+    padding-left:22px;
+    line-height:24px;
+    color:#3a7d34;
+}
+#pswd_info {
+    display:none;
+}
+
+#usr_check{
+display:none;
+color:green;
+}
+a:hover{
+color:black;}
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left:0px;
+padding-right:0px;
+
+}
+#change_class2{
+display:inline-block;}
+#change_class1{
+padding-left:0px;
+padding-right:0px;}
+#change_class2{
+display:none;}
+
+
+#img1{
+    display:none;}
+
+#img2{
+    display:}
+#img3{
+    display:none;}
+
+
+</style>
+    <script>
+
+
+
+$( document).ready(function()
+{
+
+    var isMobile = window.matchMedia("only screen and (max-width: 1200px)").matches;
+      if (isMobile)
+      {
+
+        $("#change_class2").removeClass("col-lg-8");
+        $("#change_class2").css("display","none");
+        $("#change_class3").css("display","block");
+      }
+      else{
+      $("#change_class2").addClass("col-lg-8");
+        $("#change_class2").css("display","inline-block");
+        $("#change_class3").css("display","none");
+
+
+
+
+      }
+
+
+
+
+
+
+});
+
+
+
+
+
+
+$(window).on('resize', function() {
+
+
+   var isMobile = window.matchMedia("only screen and (max-width: 1200px)").matches;
+      if (isMobile)
+      {
+
+        $("#change_class2").removeClass("col-lg-8");
+        $("#change_class2").css("display","none");
+        $("#change_class3").css("display","block");
+
+      }
+      else{
+
+        $("#change_class2").addClass("col-lg-8");
+        $("#change_class2").css("display","inline-block");
+        $("#change_class3").css("display","none");
+
+
+
+
+      }
+});
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body style="background-color:rgb(148,210,0,0.08);"   >
+<div class=" container-fluid" style="border-bottom:solid 2px #E0E0E0; border-radius:10px; width:100%; height:90px;background-color:white;">
+
+
+
+<div class="row iconbar">
+   <span class="col-xs-8 hedline" style="padding-left:5%;
+    padding-top:15px; border:0px solid black;font-family: cursive, sans-serif; "> <a href="http://127.0.0.1:8000/" style="color:black;">Dearproblems</a></span>
+<span class="col-xs-3" style="border:0px solid red;">
+    <button type="button"  class="glyphicon glyphicon-user  i"  data-toggle="modal" data-target="#myModal" ></button>
+
+    <a href="http://127.0.0.1:8000/login/" style="color:black;" ><span class="glyphicon glyphicon-log-in  i1"></span></a> </span>
+    <span class="col-xs-1" style="border:0px solid black;"></span>
+</div>
+</div>
+
+
+
+<br>
+
+{% load static %}
+
+
+<span class="container" style="border:0px solid yellow;   padding-top:10px;">
+        <span class="col-md-6 container" id="change_class1" style="height:auto; width:100%; border:0px solid black; ">
+
+
+        <img src="{% static "/my_app/tab6.png" %}" alt="tab" width="70%"  class="img-responsive" >
+           <div style="position:absolute; z-inedx:10; width:61%;  top:8.3%; left:19.4%; border-radius:5px;" >
+                <img src="{% static "/my_app/home1.png" %}" alt="tab" id="img1" class="img-responsive" >
+               <img src="{% static "/my_app/home2.png" %}" alt="tab" id="img2" class="img-responsive" >
+               <img src="{% static "/my_app/home3.png" %}" alt="tab" id="img3" class="img-responsive" >
+            </div>
+
+
+
+        </span>
+
+
+        <span class="col-md-6" id="change_class2" style="height:450px;background-color:white; border:2px solid #E0E0E0;  padding:15px; padding-top:20px; ">
+
+
+
+
+
+
+
+<div class="row" style="border:0px solid black; " >
+      <div class ="col-xs-1" style="0px solid black"></div>
+      <div class ="col-xs-10" style="font-family:cursive; "><i>
+
+          DearProblems.com is a platform<br>
+           HERE YOU CAN SHARE YOUR PROBLEMS RELATED TO :-
+          <ul>
+              <li>ENVIRONMENT</li>
+              <li>SOCIETY</li>
+              <li>ADMINISTRATION</li>
+              <li>PERSONAL</li>
+              <li> OR it can be related to any thing</li>
+          </ul>
+
+
+
+
+          <hr>
+           <h3>Outcomes you will get:-</h3>
+          <ol><li>What worlds thinks about your problem</li>
+          <li>Get solution of your problem by our community</li>
+          <li>Experience  of same problem by other peoples</li>
+          <li>Aware other peoples by your problem</li>
+           <li> Find other peoples problems in our Society</li>
+          </ol>
+
+
+      </i></div>
+
+      <div class ="col-xs-1" style="1px solid black"></div>
+      </div>
+        </span>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <span class="col-md-12" id="change_class3" style="background-color:white; border:2px solid #E0E0E0;  padding:15px; padding-top:20px; margin:10px; margin-top:20px;">
+
+<div class="row" style="border:0px solid black; " >
+
+      <div class ="col-xs-10" style="font-family:cursive; "><i>
+
+          DearProblems.com is a platform<br>
+           HERE YOU CAN SHARE YOUR PROBLEMS RELATED TO :-
+          <ul>
+              <li>ENVIRONMENT</li>
+              <li>SOCIETY</li>
+              <li>ADMINISTRATION</li>
+              <li>PERSONAL</li>
+              <li> OR it can be related to any thing</li>
+          </ul>
+
+
+
+
+          <hr>
+           <h5>Outcomes you will get:-</h5>
+          <ol><li>What worlds thinks about your problem</li>
+          <li>Get solution of your problem by our community</li>
+          <li>Experience  of same problem by other peoples</li>
+          <li>Aware other peoples by your problem</li>
+           <li> Find other peoples problems in our Society</li>
+          </ol>
+
+
+      </i></div>
+
+
+      </div>
+        </span>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" style="background-color:white; border-top:2px solid #E0E0E0; margin-top:30px; height:70px; width:100%;"><b><a href="agreement/">Copyright</a>© 2005–2018. All rights reserved</b></div>
+
+
+
+
+
+
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+<div class="modal-content">
+        <div class="modal-header" style="padding:5px 50px;">
+          <button type="button" class="close" data-dismiss="modal" style="padding-top:5px;font-size:40px;">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> SignUp</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+           <form method="POST" class="post-form">{% csrf_token %}
+            <div class="form-group">
+              <label for="id_first_name"><span class="glyphicon glyphicon-user"></span> firstname</label><br>
+              {{ form1.first_name }}
+            </div>
+               <div class="form-group">
+              <label for="id_last_name"><span class="glyphicon glyphicon-copy"></span> lastname</label><br>
+              {{ form1.last_name }}
+            </div>
+               <div class="form-group">
+              <label for="id_email"><span class="glyphicon glyphicon-envelope"></span> email</label><br>
+              {{ form1.email }}
+            </div>
+               <div class="form-group">
+              <label for="id_username"><span class="glyphicon glyphicon-check"></span> username</label>
+                   <span id="usr_check" >  Username is valid.</span>
+              {{ form1.username }}
+            </div>
+            <div class="form-group">
+              <label for="id_password"><span class="glyphicon glyphicon-eye-open"></span> password</label><br>
+              {{ form1.password }}
+            </div>
+               <div id="pswd_info">
+                   <h3>Password must meet the following requirements:</h3>
+            <ul>
+            <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+            <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+            <li id="number" class="invalid">At least <strong>one number</strong></li>
+            <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+            </ul>
+            </div>
+            <div class="form-group">
+              <label for="id_confirm_password"><span class="glyphicon glyphicon-eye-close"></span> confirm password</label><br>
+              {{ form1.confirm_password }}
+            </div>
+
+              <button type="submit" class="btn btn-success btn-block" id="submit_signup"><span class="glyphicon glyphicon-off"></span> Signup</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" id="cancel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    $('#id_password').keyup(function() {
+ var pswd = $(this).val();
+   if ( pswd.length < 8 ) {
+    $('#length').removeClass('valid').addClass('invalid');
+     } else {
+    $('#length').removeClass('invalid').addClass('valid');
+     }
+    if ( pswd.match(/[A-z]/) ) {
+    $('#letter').removeClass('invalid').addClass('valid');
+    } else {
+    $('#letter').removeClass('valid').addClass('invalid');
+    }
+    if ( pswd.match(/[A-Z]/) ) {
+    $('#capital').removeClass('invalid').addClass('valid');
+    } else {
+    $('#capital').removeClass('valid').addClass('invalid');
+    }
+    if ( pswd.match(/\d/) ) {
+    $('#number').removeClass('invalid').addClass('valid');
+    } else {
+    $('#number').removeClass('valid').addClass('invalid');
+    }
+
+}).focus(function() {
+    $('#pswd_info').show();
+}).blur(function() {
+    $('#pswd_info').hide();
+});
+
+
+
+$("#id_confirm_password").keyup(function() {
+var pswd = $("#id_password").val();
+var confrm_pswd = $("#id_confirm_password").val();
+if(pswd != confrm_pswd){
+$("#id_confirm_password:hover").css("border-bottom", "2px solid red");
+}
+else
+{
+$("#id_confirm_password").css("border-bottom", "2px solid grey");
+
+
+
+}
+});
+
+
+ $("#id_username").keyup(function () {
+            $("#usr_check").css("display","inline");
+
+      var username = $(this).val();
+
+      $.ajax({
+        url: '/ajax/validate_username/',
+        data: {
+          'username': username
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken) {
+
+            $("#usr_check").text("Username is already taken!");
+            $("#usr_check").css("color","red");
+          }
+          else{
+
+                $("#usr_check").text("Username is valid.");
+                $("#usr_check").css("color","green");
+
+
+
+            }
+        }
+      });
+
+    });
+
+</script>
+
+
+</body>
+</html>

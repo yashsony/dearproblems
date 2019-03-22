@@ -1,0 +1,130 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  .modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
+
+
+  #id_password {
+    width:90%;
+margin-left:5%;
+  padding: 6px 20px;
+border:none;
+outline:none;
+border-bottom: 2px solid grey;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+#id_password:hover {
+border-bottom: 2px solid green;
+    width:100%;
+margin-left:0px;
+
+
+}
+#id_username {
+    width:90%;
+margin-left:5%;
+  padding: 6px 20px;
+border:none;
+outline:none;
+border-bottom: 2px solid grey;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:15px;
+}
+#id_username:hover {
+border-bottom: 2px solid green;
+    width:100%;
+margin-left:0px;
+
+
+}
+
+#submit_login{
+width:90%;
+margin-left:5%;
+margin-top:30px;
+}
+#submit_login:hover{
+margin-left:0px;
+width:100%;
+}
+  </style>
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+  <!-- Modal -->
+  <div class="" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          {% if form.errors %}
+          <p>Your username and password didn't match.try again to <a href="/login/">CLICK HERE</a></p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+  {% else %}
+    <p>Please login to see this page.</p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+            <div class="form-group">
+              <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
+              {{ form2.username }}
+            </div>
+            <div class="form-group">
+              <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              {{ form2.password }}
+            </div>
+              <input type="hidden" name="next" value="{{ next }}" />
+              <button type="submit" id="submit_login" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>Not a member? <a href="http://127.0.0.1:8000/">Sign Up</a></p>
+          <p>Forgot <a href="{% url 'password_reset' %}">Password?</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

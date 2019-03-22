@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>{% block title %}{% endblock %} </title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static '/css/ass.css' %}">
+    <script src="jquery-3.3.1.min.js"></script>
+
+
+<style>
+{% block css %}{% endblock %}
+
+@media only screen and (max-width: 900px) {
+  body {
+    margin-left:0px;
+    margin-right:0px;
+  }
+  .comment_bar:after{
+  display:none;}
+  .comment_bar1:after{
+  display:none;}
+  .affix
+  { width:99%;
+  margin-left:0px;
+  }
+
+  .for_comment_submit
+   { width:30%;
+   margin-left:-15px;
+
+   }
+
+
+  .dp{
+  width:100%;
+  }
+  .iconbar{
+  width:104%
+  }
+
+  .aq{
+  margin-left:10px;
+  margin-right:10px;
+  }
+
+  .aw{
+  margin-left:10px;
+  margin-right:10px;
+  }
+  .ae{
+  margin-left:170px;
+  margin-right:2px;
+  }
+  .ar{
+  margin-right:20px;
+  margin-left:2px;
+  }
+  .o
+  {
+  margin-left:10px;
+  }
+  .o1
+  {
+    margin-left:10px;
+  }
+  .mb
+  {
+  font-size:15px;
+  }
+  .s1{
+  position:absolute;
+  top:10px;
+  right:10px;
+
+  }
+   .pz{
+   font-size:10px;
+   padding-top:5px;
+   padding-right:27px;
+}
+
+
+  .www{
+  height:100px;
+  width:100px;
+  margin-left:10px;
+  margin-right:10px;
+  }
+
+  .text{
+  font-size:16px;
+   margin-left:10px;
+  }
+
+ .zzq{
+  margin-left:280px;
+  margin-top:5px;
+ }
+ .but
+ {
+ margin-left:15px;
+  padding: 8px 23px;
+  font-size: 15px;
+ }
+
+  .but1
+ {
+  padding: 8px 23px;
+  font-size: 15px;
+ }
+
+.iconbar1{
+bottom:-200;
+position:fixed;
+}
+
+
+
+}
+
+#id_q{
+border:2px solid black
+}
+input{ width:150px;}
+input[type=text] {
+
+  padding-left : 5px ;
+
+  outline: none;
+}
+body{
+min-height:750px;
+}
+
+
+
+.s1{
+float:right;
+margin-right:4px;
+ margin-top:0px;
+}
+
+
+
+</style>
+</head>
+<body style="background-color:#F9F9F9" >
+
+
+<div class="dp" style="z-index:1000;">
+    <div class="p"> <strong class="mb"  > Dear problems</strong>
+
+{% if icon %}
+                <a href="http://127.0.0.1:8000/list/"><span  style="float:right;padding-right:10px;" class="s glyphicon glyphicon-arrow-left"></span></a>
+
+        {% else %}
+
+
+          <span id="searchbar" class="pz" style="float:right;font-size:11px;margin-right:11px;border:none;">
+        <form   action="http://127.0.0.1:8000/search/" method="GET">
+            {{ form.q }}
+            <button type="submit" style="border:2px solid black;outline:none;background-color: rgb(178,260,0);color:black;" id="zxc"><big>SUBMIT</big></button>
+    </form>
+  </span>
+
+      <span id="search" class="s1 glyphicon glyphicon-zoom-in"></span>
+        {% endif %}
+
+</div>
+</div>
+
+
+{% if data_for_alert %}
+<br><br>
+<div class="fuid-container alert_bar">
+    <div class="alert alert-success alert-dismissible fade in">
+        <a href="http://127.0.0.1:8000/list/" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> {{ data_for_alert }}
+    </div>
+</div>
+{% endif %}
+
+
+
+
+<div class="row iconbar " style="z-index:9000;">
+    <a href="http://127.0.0.1:8000/list/"  ><span class="glyphicon glyphicon-list-alt col-xs-3 i"></span></a>
+    <a href="http://127.0.0.1:8000/post/"  ><span class="glyphicon glyphicon-edit col-xs-3 i"></span></a>
+  <a href="http://127.0.0.1:8000/myacc/"> <span class=" glyphicon glyphicon-user col-xs-3 i"></span></a>
+    <a href="http://127.0.0.1:8000/setting/" ><span class="glyphicon glyphicon-tasks col-xs-3 i"></span></a>
+</div>
+
+
+
+
+{% block content %}
+{% endblock %}
+
+ <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+<script>
+
+
+$( document).ready(function()
+{
+    var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+      if (isMobile)
+      {
+        $("#id_q").fadeOut("7000");
+        $("#zxc").fadeOut("7000");
+        $("#search").click(function()
+            {
+                $("#id_q").fadeToggle("slow");
+                $("#zxc").fadeToggle("slow");
+            });
+      }
+});
+
+
+
+
+
+
+{% block javascript %}
+{% endblock %}
+</script>
+</body>
+</html>

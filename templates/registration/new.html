@@ -1,0 +1,117 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+
+
+@media only screen and (max-width: 900px) {
+  body {
+    margin-left:0px;
+    margin-right:0px;
+  }
+
+  .dp{
+  width:100%;
+  }
+  .iconbar{
+  width:107%
+  }
+
+ .aq{
+  margin-left:10px;
+  margin-right:10px;
+  }
+  .www{
+  height:100px;
+  width:100px;
+  margin-left:10px;
+  margin-right:10px;
+  }
+
+  .text{
+  font-size:16px;
+   margin-left:10px;
+  }
+
+ .zzq{
+  margin-left:280px;
+  margin-top:5px;
+ }
+ .but
+ {
+ margin-left:15px;
+  padding: 8px 23px;
+  font-size: 15px;
+ }
+
+  .but1
+ {
+  padding: 8px 23px;
+  font-size: 15px;
+ }
+
+}
+
+{% block content %}
+
+<p>
+        <img src="{% static "/my_app/my_avtar.png" %}" alt="avatar" class="www">
+    <div class="text">
+        {{ u.first_name }} {{ u.last_name }}<br>
+        <strong>Email-id:</strong><br>{{ u.email }}<br>
+        <strong>Joined:</strong>{{ u.date_joined }}
+    </div>
+</p>
+<p class="zzq"><strong>{{ u.username }}</strong></p>
+<hr>
+<a href="http://127.0.0.1:8000/myacc/" class="but" style="text-decoration:none;">posts</a>
+<a href="http://127.0.0.1:8000/myacc2/" class="but1" style="text-decoration:none;">liked posts</a>
+<a href="http://127.0.0.1:8000/myacc1/" class="but1" style="text-decoration:none;">commented</a>
+
+
+ {% for b,c,a,d in z %}
+
+<div class="aw">
+    <img src="{% static "/my_app/my_avtar.png" %}" alt="avtar" width="50" height="50" style="margin-left:15px;margin-top:5px; box-shadow:0 3px 4px 0 rgba(0,0,0,0.2),0 6px 8px 0 rgba(0,0,0,0.19);">
+    <span class="user"><strong><a href="http://127.0.0.1:8000/profile/{{ d.id }}/" style="text-decoration:none;">{{ b.user }}</a></strong></span>
+</div>
+
+    <div class="aq" style="background-color:white; border: 1px solid #E0E0E0;">
+        <h4>{{ b.title }}</h4>
+{{ b.description }}
+    </div>
+<button type="button" class="ae ooq" value="{{ b.id }}" style="outline:none;"><span class="glyphicon glyphicon-thumbs-up"></span> Like</button>
+<button type="button" class="ar"><a href="http://127.0.0.1:8000/{{ b.id }}/" style="text-decoration:none;outline:none;">Comment</a></button>
+
+<div class="o"><strong>Liked by </strong><span class="{{ b.id }}">{{ c }}</span>  </div>
+<div class="o1" style="margin-top:5px"><strong>Commented by </strong> {{ a }} </div>
+<hr>
+ {% endfor %}
+
+<br>
+<br>
+<br>
+{% endblock %}
+{% block javascript %}
+
+
+$(".ooq").click(function () {
+      var id = $(this).val();
+
+      $.ajax({
+        url: '/ajax/add_like/',
+        data: {
+          'id': id
+        },
+        dataType: 'json',
+
+        success: function (data) {
+            if(data.w=="already liked")
+                {$("."+id).text(" "+data.w+" by you");}
+            else
+                {$("."+id).text(" "+data.w+" liked by you");}
+
+
+        }
+      });
+
+    });
+{% endblock %}

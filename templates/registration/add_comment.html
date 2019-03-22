@@ -1,0 +1,183 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block css %}
+
+
+#id_comment{
+width:100%;
+}
+.affix{
+width:39.5%;
+margin-left:3px;
+}
+.for_comment_submit{
+ margin-left:-2%;
+
+}
+
+
+.comment_bar
+{ width:60%;
+ position:relative;
+ min-height:90px;
+max-height:auto;
+ border:2px solid #E8E8E8;
+ box-sizing:border-box;
+background-color:white;
+padding-top:10px;
+font-family:"Comic Sans MS", cursive, sans-serif;
+padding-bottom:10px;
+ box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+
+}
+.comment_bar:after
+{
+ position:absolute;
+ height:30px;
+ width:30px;
+ border-left:2px  solid #E8E8E8;
+ border-right:2px white;
+ border-top:2px white;
+ border-bottom:2px solid #E8E8E8;
+ transform:rotate(45deg);
+ content:'';
+ left:-4.8%;
+ top:115px;
+ margin-top:-25%;
+background-color:white;
+display:inline;
+
+
+
+}
+
+
+.comment_bar1
+{ width:60%;
+ position:relative;
+margin-top:5px;
+ min-height:90px;
+ border:2px solid #E8E8E8;
+ box-sizing:border-box;
+background-color:white;
+margin-left:22%;
+max-height:auto;
+padding-top:10px;
+font-family:"Comic Sans MS", cursive, sans-serif;
+ box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+padding-bottom:10px;
+}
+.comment_bar1:after
+{ display:inline;
+ position:absolute;
+ height:30px;
+ width:30px;
+ border-left:2px white;
+ border-right:2px solid #E8E8E8;
+ border-top:2px solid #E8E8E8;
+ border-bottom:2px white;
+ transform:rotate(45deg);
+ content:'';
+ left:96%;
+ top:115px;
+ margin-top:-25%;
+background-color:white;
+
+}
+
+
+
+
+
+{% endblock %}
+{% block content %}
+<br><br>
+<div class="affix" style="background-color:rgb(255,255,255);;height:40px; margin-top:4px; z-index:9000;" >
+<form method="POST" action="http://127.0.0.1:8000/addcomment/{{ post.id }}/">{% csrf_token %}
+    <div class ="col-xs-9 for_comment_input" style=" margin-left:10%; width:50%;padding-top:5px;">{{ form_comment.comment }}</div>
+    <div class ="col-xs-3 for_comment_submit" style="padding-top:5px;"><input type="submit"  style="font-size : 10px; width: 100%; height: 25px;  background-color: rgb(148,210,0,0.5);" value="Add Comment" id="submit"></div>
+    </form>
+</div>
+
+
+<div class="aw">
+        <img src="{% static "/my_app/my_avtar.png" %}" alt="avtar" width="50" height="50" style="margin-left:15px;margin-top:10px; box-shadow:0 3px 4px 0 rgba(0,0,0,0.2),0 6px 8px 0 rgba(0,0,0,0.19);">
+    <span class="user" ><strong><a href="http://127.0.0.1:8000/profile/{{ post.user.id }}/">{{ post.user }}</a></strong></span>
+</div>
+
+
+    <div class="aq" style="background-color:white; border: 1px solid #E0E0E0;">
+        <h4>{{ post.title }}</h4>
+        {{ post.description }}
+
+</div>
+<br>
+
+<hr class="hrq">
+
+
+
+
+
+  {% if no_c  %}
+<br>
+            <div class="row">
+      <div class ="col-xs-2"></div>
+                <div class ="col-xs-8"><small><i>There are no comments on this post. Add first comment on this post.</i></small></div>
+        <div class ="col-xs-2"></div>
+    </div>
+
+<br><br><br>
+
+ <br><br><br>
+ <br><br><br>
+<br><br><br>
+<br>
+
+
+
+  {% else %}
+
+{% for b,c,d in u_and_c %}
+
+{% if  d == 0  %}
+<img src="{% static "/my_app/my_avtar.png" %}" alt="avtar" width="40" height="40" style="margin-right:5px; margin-left:7%;margin-bottom:5px; box-shadow:0 3px 4px 0 rgba(0,0,0,0.2),0 6px 8px 0 rgba(0,0,0,0.19);">
+<a href="http://127.0.0.1:8000/profile/{{ c.id }}/" ><b>{{ b.user }}</b></a>
+<div class="row">
+    <span class="col-xs-1"></span>
+    <span class="col-xs-10 comment_bar">{{ b.comment }}</span>
+    <span class="col-xs-1"></span>
+</div>
+<br>
+{% else %}
+<img src="{% static "/my_app/my_avtar.png" %}" alt="avtar" width="40" height="40" style="margin-right:5px; margin-left:70%; margin-bottom:0px; box-shadow:0 3px 4px 0 rgba(0,0,0,0.2),0 6px 8px 0 rgba(0,0,0,0.19);">
+<a href="http://127.0.0.1:8000/profile/{{ c.id }}/"  ><b>{{ b.user }}</b></a>
+<div class="row">
+    <span class="col-xs-1"></span>
+    <span class="col-xs-10 comment_bar1" >{{ b.comment }}</span>
+    <span class="col-xs-1"></span>
+</div>
+<br>
+{% endif %}
+    {% endfor %}
+
+
+ {% endif %}
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+{% endblock %}

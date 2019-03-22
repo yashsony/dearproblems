@@ -1,0 +1,30 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block title %}
+settings
+{% endblock %}
+{% block css %}
+#submit{
+width:90%;
+margin-left:5%;
+margin-top:30px;
+}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<br><br><br>
+
+<form action="http://127.0.0.1:8000/logout/">
+<button type="submit" class="btn btn-success btn-block" id="submit"><span class="glyphicon glyphicon-off"></span> LogOut</button>
+          </form>
+
+{% endblock %}
+
+
+{% block javascript %}
+{% endblock %}
